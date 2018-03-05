@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html style="font-size: 50px;">
+<head>
+    <title>{{page_param['title']}}</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="{{page_param['keywords']}}">
+    <meta name="description" content="{{page_param['description']}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="Shortcut Icon" href="/static/first/images/favicon.ico">
+    <link rel="stylesheet" href="/static/first/css/wap-home.css?v=1.0.1">
+    <script src="/static/first/js/jquery-1.9.0.min.js"></script>
+
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=750){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+<!-- 头部 -->
+<div id="top-bar" class="top-bar">
+    <div class="top">
+        <img src="/static/first/images/pc-logo.png" alt="">
+        <span id="nav-button"></span>
+        <div id="nav" class="nav clx">
+            <a href="javascript:;">首页</a>
+            <a href="javascript:;">简介</a>
+            <a href="javascript:;">优势</a>
+            <a href="javascript:;">场景</a>
+            <a target="_blank" href="/static/doc/IPM Whitepaper 20180228.pdf">白皮书</a>
+        </div>
+    </div>
+</div>
+<!-- 顶部banner图 -->
+<div class="banner">
+    <div class="msg-box">
+        <h3>全球区块链知识产权合约</h3>
+        <h3>交易所 IP MARKET</h3>
+    </div>
+</div>
+<!-- 主题内容 -->
+<div class="wrap content">
+    <!-- 简介 -->
+    <div id="brief" class="section">
+        <div class="hgroup">
+            <h3>简介<span>IP Market Introduction</span></h3>
+            <p>律链（IPM）致力于通过区块链技术，服务知识产权交易领域，实现知识产权与价值的相互流动。律链，作为公链，将首先涉足音乐及声音领域，来解决版权追溯难度高、维权取证困难、成本高等行业痛点。同时，律链也是全球首个知识产权交易与音乐播放合二为一的区块链解决方案。</p>
+            <p>然后另起一段：未来，律链也将协助和支持权利人拥有自己专属的token。</p>
+        </div>
+        <div class="hgroup">
+            <img src="/static/first/images/pc-pic-brief.png" alt="">
+        </div>
+    </div>
+    <!-- 优势: 1 -->
+    <div id="advantage" class="section">
+        <div class="hgroup advantage">
+            <h3>优势<span>IP Market Advantages</span></h3>
+            <h4>可溯源保护原创作者权益、节省维权成本</h4>
+            <p>版权信息、数字资产文件加密防篡改</p>
+            <p>根据时间戳，轻易追踪版权交易全过程，保护各方利益，节省版权认定的成本</p>
+        </div>
+        <div class="hgroup">
+            <img src="/static/first/images/pc-pic-advantage-1.png" alt="">
+        </div>
+    </div>
+    <!-- 优势: 2 -->
+    <div class="section pb95">
+        <div class="hgroup advantage">
+            <h4>智能合约支持价值快速流转</h4>
+            <p>通过智能合约，交易发生瞬间即可按照复杂的规则实现价值流转</p>
+            <p>改造产业链，提供公开透明版权交易查询，避免版权纠纷</p>
+        </div>
+        <div class="hgroup">
+            <img src="/static/first/images/pc-pic-advantage-2.png" alt="">
+        </div>
+    </div>
+    <!-- 优势: 3 -->
+    <div class="section">
+        <div class="hgroup advantage">
+            <h4>去中心化提升资金效率</h4>
+            <p>通过区块链实现去中心化，打破大平台、大渠道商的垄断地位，将其垄断利润归还给权利人，大大提升资金效率</p>
+            <p>消费者可用更低的成本享受音乐作品，唱片公司、词曲创作人获得更高的回报</p>
+        </div>
+        <div class="hgroup">
+            <img src="/static/first/images/pc-pic-advantage-3.png" alt="">
+        </div>
+    </div>
+    <!-- 优势: 4 -->
+    <div class="section">
+        <div class="hgroup advantage">
+            <h4>人人平等，人人获益</h4>
+            <p>创作者提供作品、存储数字资产与消费者使用作品、提供存储空间同时发生实现“听歌即挣钱”</p>
+        </div>
+        <div class="hgroup">
+            <img src="/static/first/images/pc-pic-advantage-4.png" alt="">
+        </div>
+    </div>
+    <!-- 优势: 5 -->
+    <div class="section">
+        <div class="hgroup advantage">
+            <h4>AI技术反盗版，通过盗版促进IP流转</h4>
+            <p>通过AI技术实时监测盗版行为，并按照作者设定比例实时进行收益分配</p>
+            <p>免去盗版确认及追偿过程，加速作品传播</p>
+        </div>
+        <div class="hgroup">
+            <img src="/static/first/images/pc-pic-advantage-5.png" alt="">
+        </div>
+    </div>
+    <!-- 场景 -->
+    <div id="scenes" class="section">
+        <div class="hgroup">
+            <h3>场景<span>IP Market Scenes</span></h3>
+            <div class="btn-box clx">
+                <a class="fl active" href="javascript:;">音乐版权交易所</a>
+                <a class="fr" href="javascript:;">V音</a>
+            </div>
+            <div class="msg-box" style="display: block;">
+                <p>利用律链的版权管理和交易功能，打造去中心化的音乐版权交易所</p>
+                <div class="list-box clx">
+                    <div class="fl list-item">
+                        <p>歌曲在线编辑与上传</p>
+                        <p>版权交易</p>
+                    </div>
+                    <div class="fr list-item">
+                        <p>智能合约设置</p>
+                        <p>交易历史记录与查询</p>
+                    </div>
+                </div>
+            </div>
+            <div class="msg-box">
+                <p>“Your Voice, Your Assets”——V音：首款UGC的DAPP</p>
+                <div class="list-box clx">
+                    <div class="fl list-item">
+                        <p>大自然或非自然声音上传</p>
+                        <p>可选多种收听收益分成模式</p>
+                        <p>盗版（翻唱）分成</p>
+                    </div>
+                    <div class="fr list-item">
+                        <p>声音游戏有奖竞猜</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hgroup">
+            <img class="scenes-pic" src="/static/first/images/pc-pic-scenes-1.png" alt="" style="display: inline-block;">
+            <img class="scenes-pic" src="/static/first/images/pc-pic-scenes-2.png" alt="">
+        </div>
+    </div>
+</div>
+<!-- 合作媒体 -->
+<div id="media" class="wrap media">
+    <h3>合作媒体<span>Media Partners</span></h3>
+    <div class="company-logos"></div>
+</div>
+<!-- 发展路线图 -->
+<div id="road-map" class="wrap road-map">
+    <h3>发展路线图<span>Roadmap</span></h3>
+    <div class="road-map-box">
+        <i class="line"></i>
+        <div class="list-item">
+            <span><i></i></span>
+            <p>2018年Q1</p>
+            <p>ICO及扩招团队</p>
+        </div>
+        <div class="list-item">
+            <span><i></i></span>
+            <p>2018年Q2</p>
+            <p>完成底层架构开发，首款DAPP“V音”开发</p>
+        </div>
+        <div class="list-item">
+            <span><i></i></span>
+            <p>2018年Q3</p>
+            <p>完成生态系统搭建，及内测</p>
+        </div>
+        <div class="list-item">
+            <span><i></i></span>
+            <p>2018年Q4</p>
+            <p>公测，开放注册；合作伙伴接入</p>
+        </div>
+        <div class="list-item">
+            <span><i></i></span>
+            <p>2019年Q1</p>
+            <p>全球范围内100万用户</p>
+        </div>
+        <div class="list-item">
+            <span><i></i></span>
+            <p>2019年Q2</p>
+            <p>全球范围推广</p>
+        </div>
+        <div class="list-item">
+            <span><i></i></span>
+            <p>2019年Q3</p>
+            <p>引入DAPP开发者及丰富产品</p>
+        </div>
+        <div class="list-item">
+            <span><i></i></span>
+            <p>2019年Q4</p>
+            <p>向其他IP领域扩张</p>
+        </div>
+    </div>
+</div>
+<!-- 底部 -->
+<div class="footer">
+  <h4>联系我们 Contact us</h4>
+  <!-- 分享图标 -->
+    <div class="share-box clx">
+        <a target="_blank" data-text="" href="javascript:;"></a>
+        <a target="_blank" data-text="" href="javascript:;"></a>
+        <a target="_blank" data-text="twitter" href="https://twitter.com/ipmfoundation"></a>
+        <a target="_blank" data-text="" href="javascript:;"></a>
+        <a target="_blank" data-text="" href="javascript:;"></a>
+        <a target="_blank" data-text="github" href="https://github.com/W-B-S"></a>
+    </div>
+  <p>copyright@IPM</p>
+</div>
+<script src="/static/first/js/wap-home.js?v=1.0.0"></script>
+</body>
+</html>

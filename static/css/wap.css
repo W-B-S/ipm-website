@@ -1,0 +1,470 @@
+body {
+	margin: 0;
+}
+form, ul, ol, dl, p, h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+td{
+	padding: 0;
+}
+dd {
+	margin-left: 0;
+}
+ul, ol {
+	margin-left: 0;
+	padding-left: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	font-size: inherit;
+	font-weight: normal;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+input {
+	padding: 0px;
+	margin: 0px;
+	-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	border: 0;
+	font-size: inherit;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+em, i {
+	font-style: normal;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+li {
+	list-style: none;
+}
+html, body, input {
+	font-family: "Microsoft YaHei", arial, simsun, SimHei;
+	font-size: .24rem;
+	color: #0d263b;
+}
+img {
+	border: 0;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.clx {
+	zoom: 1
+}
+.clx:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+	overflow: hidden
+}
+.wrap,
+.content {
+	position: relative;
+	width: 7.5rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.linear {
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fcfcfc));
+	background: -webkit-linear-gradient(#fff, #fcfcfc);
+	background: -moz-linear-gradient(#fff, #fcfcfc);
+	background: -o-linear-gradient(#fff, #fcfcfc);
+	background: linear-gradient(#fff, #fcfcfc);
+}
+.wrap .title {
+	padding-top: .5rem;
+	text-align: center;
+	background-color: #fff;
+}
+.wrap .title>h3 {
+	font-size: .36rem;
+}
+.wrap .title>p {
+	font-size: .2rem;
+}
+.content {
+	padding: .5rem 0;
+}
+.content .text-box,
+.content .img-box {
+	width: 6.8rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.content .img-box {
+	padding-top: .6rem;
+}
+.content .img-box>img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+.content .text-box>h4 {
+	color: #42c2ff;
+}
+.content .text-box>p {
+	line-height: .42rem;
+}
+
+/*顶部*/
+.header {
+	position: relative;
+	width: 7.5rem;
+	height: 4.4rem;
+	background-color: #0d263b;
+}
+.header .banner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4.4rem;
+	overflow: hidden;
+}
+.header .banner>li {
+	width: 100%;
+	height: 4.4rem;
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: 7.5rem 7.5rem;
+	   -moz-background-size: 7.5rem;
+	     -o-background-size: 7.5rem;
+	        background-size: 7.5rem;
+	background-image: url(../images/wap-banner.png)
+}
+.header .top-bar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	padding: .3rem 0px;
+	z-index: 10;
+}
+.header .top-bar.active {
+	background-color: #000;
+	opacity: .8;
+	filter: alpha(opacity=80);
+}
+.header .top {
+	position: relative;
+	width: 7.5rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.header .top .logo,
+.header .top .logo>img {
+	width: 2.65rem;
+	height: .36rem;
+}
+.header .top .logo {
+	padding-left: .3rem;
+}
+.header .top .nav-button {
+	position: absolute;
+	top: -.05rem;
+	right: .3rem;
+	width: .4rem;
+	height: .4rem;
+	background: url(../images/wap-nav-button.png) center no-repeat;
+	-webkit-background-size: .38rem .38rem;
+	   -moz-background-size: .38rem;
+	     -o-background-size: .38rem;
+	        background-size: .38rem;
+}
+.header .top .nav {
+	position: absolute;
+	top: .8rem;
+	right: -2rem;
+	width: 2rem;
+	padding-top: .3rem;
+	padding-bottom: .3rem;
+	color: #fff;
+	background: #191919;
+	display: none;
+}
+.header .top .nav:before {
+	position: absolute;
+	top: -.2rem;
+	left: .7rem;
+	width: 0;
+	height: 0;
+	content: "";
+	border-bottom: .4rem solid #191919;
+	border-left: .3rem solid transparent;
+	border-right: .3rem solid transparent;
+	display: block;
+}
+.header .top .nav>li {
+	height: .8rem;
+	font-size: .28rem;
+	text-align: center;
+	line-height: .8rem;
+}
+.header .top .nav a:hover {
+	color: #42c2ff;
+}
+
+/*知识市场简介*/
+.content.brief-info .img-box>img {
+	width: 5.73rem;
+}
+/*知识市场优势*/
+.content.advantage.step1 .img-box>img {
+	width: 4.32rem;
+}
+.content.advantage.step2 .img-box>img {
+	width: 4.2rem;
+}
+.content.advantage.step3 .img-box>img {
+	width: 4.16rem;
+}
+
+/* 创始团队 + 投资人 */
+.content .list>img {
+	position: absolute;
+	width: 1.6rem;
+	height: 1.6rem;
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
+	z-index: 2;
+}
+.content .list .list-msg {
+	background-color: #fff;
+	-webkit-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	        border-radius: 10px;
+	-webkit-box-shadow:0px 0px 20px #f4f4f4;
+	   -moz-box-shadow:0px 0px 20px #f4f4f4;
+	        box-shadow:0px 0px 20px #f4f4f4;
+	z-index: 1;
+}
+.content.investors .list .list-msg>h5,
+.content.investors .list .list-msg>span {
+	text-align: center;
+}
+.content .list .list-msg>h5 {
+	font-size: .36rem;
+}
+.content .list .list-msg>span {
+	padding-bottom: .2rem;
+	font-size: .24rem;
+	display: block;
+}
+.content .list .list-msg>p {
+	font-size: .24rem;
+	color: #898989;
+	line-height: .36rem;
+	word-break:break-all;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/*创始团队*/
+.content.team .list {
+	position: relative;
+	width: 6.8rem;
+	min-height: 2.9rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: .3rem;
+}
+.content.team .list>img {
+	top: .3rem;
+	left: 0;
+}
+.content.team .list .list-msg {
+	width: 4.6rem;
+	min-height: 2.1rem;
+	padding: .7rem .2rem .2rem 1.1rem;
+}
+
+/*投资人*/
+.content.investors .list {
+	position: relative;
+	width: 3.15rem;
+	min-height: 4.9rem;
+	float: left;
+	margin: 0 .3rem .3rem;
+}
+.content.investors .list>img {
+	top: 0;
+	left: 50%;
+	margin-left: -.8rem;
+}
+.content.investors .list .list-msg {
+	width: 2.75rem;
+	min-height: 3rem;
+	margin-top: .8rem;
+	padding: .9rem .2rem .2rem;
+}
+
+/*投资机构*/
+.organize {
+	width: 6.8rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.organize>img {
+	width: 3.2rem;
+}
+
+/*合作媒体*/
+.media-list {
+	width: 6.8rem;
+	padding-bottom: .5rem;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+.media-list li {
+    float: left;
+    width: 1.6rem;
+    height: .5rem;
+    margin-top: .3rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    text-align: center;
+}
+.media-list li img {
+	width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+/*发展路线*/
+.map-box {
+    position: relative;
+    width: 2px;
+    height: 10rem;
+    margin: .2rem auto;
+    background-color: #d7d7d7
+}
+.map-box .map-item {
+	position: absolute;
+	width: 2.7rem;
+	height: 1.7rem;
+	padding-top: .3rem;
+	font-size: .16rem;
+	border-top: 2px solid #d7d7d7;
+}
+.map-box .map-item>h3 {
+	color: #42c2ff;
+}
+.map-box .map-item>p {
+	text-indent: 1em;
+}
+.map-box .map-item:before {
+	position: absolute;
+	content: "";
+	width: 16px;
+	height: 16px;
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
+	background-color: #d7d7d7;
+	display: block;
+}
+.map-box .map-item.right {
+	left: 0;
+	padding-left: .3rem;
+}
+.map-box .map-item.left {
+	right: 0;
+	padding-right: .3rem;
+}
+.map-box .map-item.right:before,
+.map-box .map-item.left:before {
+	top: -9px;
+}
+.map-box .map-item.right:before {
+	left: -7px;
+}
+.map-box .map-item.left:before {
+	right: -7px;
+}
+.map-box .map-item.step1 {
+	top: 1rem;
+}
+.map-box .map-item.step2 {
+	top: 3rem;
+}
+.map-box .map-item.step3 {
+	top: 5rem;
+}
+.map-box .map-item.step4 {
+	top: 7rem;
+}
+
+/*底部浮栏*/
+.float-bar {
+	width: 100%;
+	background-color: #0d263b;
+}
+.float-bar>ul {
+	width: 6.5rem;
+	height: 2rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+.float-bar li {
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+.float-bar li>a {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.float-bar li>a>em {
+	position: absolute;
+	top:  50%;
+	left: 50%;
+	margin-top: -.3rem;
+	margin-left: -.3rem;
+	width: .6rem;
+	height: .6rem;
+	background-image: url(../images/wap-float-bar-icons.png);
+	-webkit-background-size: .6rem .6rem;
+	   -moz-background-size: .6rem;
+	     -o-background-size: .6rem;
+	        background-size: .6rem;
+	background-repeat: no-repeat;
+}
+.float-bar li.weixin>a>em {
+	background-position: center 0;
+}
+.float-bar li.qq>a>em {
+	background-position: center -.6rem;
+}
+.float-bar li.twitter>a>em {
+	background-position: center -1.2rem;
+}
+.float-bar li.facebook>a>em {
+	background-position: center -1.8rem;
+}
+.float-bar li.beechat>a>em {
+	background-position: center -2.4rem;
+}
+.float-bar>p {
+	padding-top: .2rem;
+	padding-bottom: .2rem;
+	font-size: .14rem;
+	color: #a9a9a9;
+	text-align: center;
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html style="font-size: 50px;">
+<head>
+    <title>{{page_param['title']}}</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="{{page_param['keywords']}}">
+    <meta name="description" content="{{page_param['description']}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="Shortcut Icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/wap.css?v=1.0.2">
+    <script src="/static/js/jquery-1.9.0.min.js"></script>
+
+    <script>
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        if(clientWidth>=750){
+                            docEl.style.fontSize = '100px';
+                        }else{
+                            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                        }
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+    <!-- 顶部 -->
+    <div class="wrap header">
+        <ul class="banner">
+            <li></li>
+        </ul>
+        <div id="top-bar" class="top-bar">
+            <div class="top">
+                <div class="logo">
+                    <img src="/static/images/wap-logo.png" alt="">
+                </div>
+                <div id="nav-button" class="nav-button"></div>
+                <ul id="nav" class="nav clx">
+                    <li>
+                        <a href="javascript:;">首页</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">简介</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">优势</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">团队</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">投资人</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 知识市场简介 -->
+    <div id="brief-info" class="wrap">
+        <div class="title">
+            <h3>知识市场简介</h3>
+            <p>IP Market Introduction</p>
+        </div>
+    </div>
+    <div class="linear">
+        <div class="content brief-info">
+            <div class="text-box">
+                <p>知识市场(IP Market)是全球区块链知识产权合约市场的简介是全球首家使用存储与使用双向激励架构的区块链，实现了知识产权与价值的相互流动。</p>
+            </div>
+            <div class="img-box">
+                <img src="/static/images/wap-brief-info.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 知识市场优势: 1 -->
+    <div id="advantage" class="wrap">
+        <div class="title">
+            <h3>知识市场优势</h3>
+            <p>IP Market Advantages</p>
+        </div>
+    </div>
+    <div class="linear">
+        <div class="content advantage step1">
+            <div class="text-box">
+                <h4>创作使用 双向激励</h4>
+                <p>全球首家使用存储与使用双向激励架构的区块链</p>
+            </div>
+            <div class="img-box clx">
+                <img src="/static/images/wap-advantage-1.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 知识市场优势: 2 -->
+    <div class="linear">
+        <div class="content advantage step2">
+            <div class="text-box">
+                <h4>智能合约 自动执行</h4>
+                <p>智能合约触发全过程自动执行，避免版权纠纷，降低成本</p>
+            </div>
+            <div class="img-box clx">
+                <img src="/static/images/wap-advantage-2.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 知识市场优势: 3 -->
+    <div class="linear">
+        <div class="content advantage step3">
+            <div class="text-box">
+                <h4>有创造 就有价值</h4>
+                <p>完全去中心化，人人平等，自行创造价值，享受公平公正公开回报</p>
+            </div>
+            <div class="img-box clx">
+                <img src="/static/images/wap-advantage-3.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- 创始团队 -->
+    <div id="team" class="wrap">
+        <div class="title">
+            <h3>创始团队</h3>
+            <p>Founding Team</p>
+        </div>
+    </div>
+    <div class="linear">
+        <div class="content team">
+            <div class="list clx">
+                <img src="/static/images/pc-portrait.png" alt="">
+                <div class="list-msg fr">
+                    <h5>姓名</h5>
+                    <span>职务</span>
+                    <p>In sit amet condimentumfelis,qulsfinibus saplen.Nunc felis nisi,pellentesqueaccumsan diam ut,accumsan</p>
+                </div>
+            </div>
+            <div class="list clx">
+                <img src="/static/images/pc-portrait.png" alt="">
+                <div class="list-msg fr">
+                    <h5>姓名</h5>
+                    <span>职务</span>
+                    <p>In sit amet condimentumfelis,qulsfinibus saplen.Nunc felis nisi,pellentesqueaccumsan diam ut,accumsan</p>
+                </div>
+            </div>
+            <div class="list clx">
+                <img src="/static/images/pc-portrait.png" alt="">
+                <div class="list-msg fr">
+                    <h5>姓名</h5>
+                    <span>职务</span>
+                    <p>In sit amet condimentumfelis,qulsfinibus saplen.Nunc felis nisi,pellentesqueaccumsan diam ut,accumsan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 投资人 -->
+    <div id="investors" class="wrap">
+        <div class="title">
+            <h3>投资人</h3>
+            <p>Investors</p>
+        </div>
+    </div>
+    <div class="linear">
+        <div class="content investors clx">
+            <div class="list">
+                <img src="/static/images/pc-portrait.png" alt="">
+                <div class="list-msg">
+                    <h5>姓名</h5>
+                    <span>职务</span>
+                    <p>In sit amet condimentumfelis,qulsfinibus saplen.Nunc felis nisi,pellentesqueaccumsan diam ut,accumsan</p>
+                </div>
+            </div>
+            <div class="list">
+                <img src="/static/images/pc-portrait.png" alt="">
+                <div class="list-msg">
+                    <h5>姓名</h5>
+                    <span>职务</span>
+                    <p>In sit amet condimentumfelis,qulsfinibus saplen.Nunc felis nisi,pellentesqueaccumsan diam ut,accumsan</p>
+                </div>
+            </div>
+            <div class="list">
+                <img src="/static/images/pc-portrait.png" alt="">
+                <div class="list-msg">
+                    <h5>姓名</h5>
+                    <span>职务</span>
+                    <p>In sit amet condimentumfelis,qulsfinibus saplen.Nunc felis nisi,pellentesqueaccumsan diam ut,accumsan</p>
+                </div>
+            </div>
+            <div class="list">
+                <img src="/static/images/pc-portrait.png" alt="">
+                <div class="list-msg">
+                    <h5>姓名</h5>
+                    <span>职务</span>
+                    <p>In sit amet condimentumfelis,qulsfinibus saplen.Nunc felis nisi,pellentesqueaccumsan diam ut,accumsan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 投资机构 -->
+    <div class="wrap">
+        <div class="title">
+            <h3>投资机构</h3>
+            <p>Institutional Investors</p>
+        </div>
+    </div>
+    <div class="content organize clx">
+        <img class="fl" src="/static/images/pc-organize.png" alt="">
+        <img class="fr" src="/static/images/pc-organize.png" alt="">
+    </div>
+    </div>
+    <!-- 合作媒体 -->
+    <div class="wrap media">
+        <div class="title">
+            <h3>合作媒体</h3>
+            <p>Media Partners</p>
+        </div>
+         <ul class="media-list clx">
+            <li><img src="/static/images/pc-cbn.png"></li>
+            <li><img src="/static/images/pc-jinse_logo.png"></li>
+            <li><img src="/static/images/pc-marketwatch_logo.png"></li>
+            <li><img src="/static/images/pc-netease.png"></li>
+            <li><img src="/static/images/pc-pw.png"></li>
+            <li><img src="/static/images/pc-sohu.png"></li>
+            <li><img src="/static/images/pc-technode.png"></li>
+            <li><img src="/static/images/pc-thebc_logo.png"></li>
+            <li><img src="/static/images/pc-tokenmarket_logo.png"></li>
+            <li><img src="/static/images/pc-jinniu_logo.png"></li>
+        </ul>
+    </div>
+    <!-- 发展路线图 -->
+    <div class="wrap map">
+        <div class="title">
+            <h3>发展路线图</h3>
+            <p>Roadmap</p>
+        </div>
+        <div class="map-box">
+            <div class="map-item right step1">
+                <h3>发展路线</h3>
+                <p>发展路线发展路线发展路</p>
+                <p>发展路线发展路线发展路</p>
+                <p>发展路线发展路线发展路</p>
+            </div>
+            <div class="map-item left step2">
+                <h3>发展路线</h3>
+                <p>发展路线发展路线发展路</p>
+                <p>发展路线发展路线发展路</p>
+                <p>发展路线发展路线发展路</p>
+            </div>
+            <div class="map-item right step3">
+                <h3>发展路线</h3>
+                <p>发展路线发展路线发展路</p>
+                <p>发展路线发展路线发展路</p>
+                <p>发展路线发展路线发展路</p>
+            </div>
+            <div class="map-item left step4">
+                <h3>发展路线</h3>
+                <p>发展路线发展路线发展路</p>
+                <p>发展路线发展路线发展路</p>
+                <p>发展路线发展路线发展路</p>
+            </div>
+        </div>
+    </div>
+    <!-- 右侧浮栏 -->
+    <div class="float-bar">
+        <ul class="clx">
+            <li class="weixin">
+                <a href="javascript:;"><em></em></a>
+            </li>
+            <li class="qq">
+                <a href="javascript:;"><em></em></a>
+            </li>
+            <li class="twitter">
+                <a href="javascript:;"><em></em></a>
+            </li>
+            <li class="facebook">
+                <a href="javascript:;"><em></em></a>
+            </li>
+            <li class="beechat">
+                <a href="javascript:;"><em></em></a>
+            </li>
+        </ul>
+        <p>copyright@Ip Market</p>
+    </div>
+<script src="/static/js/wap_home.js?v=1.0.0"></script>
+</body>
+</html>
