@@ -15,9 +15,11 @@ git pull
 
 master_list=(
 master:m0
+master:m1
 )
 slave_list=(
 slave:s0
+slave:s1
 )
 # restart master_list
 for item in ${master_list[@]}

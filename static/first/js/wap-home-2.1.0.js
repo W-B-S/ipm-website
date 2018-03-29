@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+$(document).ready(function(){
 	// 自定义弹窗
 	(function() {
 	  var f, c, g;
@@ -16,7 +15,6 @@ $(document).ready(function () {
 	    a(1, h || "出现错误");
 
 	      var i = document.documentElement || document.body;
-	      g.style.position = "absolute";
 	      g.style.top = (document.documentElement.scrollTop||document.body.scrollTop) + ((document.documentElement.clientHeight || document.body.clientHeight) - g.offsetHeight) / 2 + "px"
 
 	    f = window.setTimeout(function() {
@@ -57,20 +55,48 @@ $(document).ready(function () {
 	  window.salert = b
 	})();
 
+	// 窗口禁止&&恢复滚动
+	var scrollTop = 0;
+	var BODYBOX = {
+	  _noScroll: function(scrollTop) {
+	    $('body').css({
+	      'overflow': 'hidden',
+	      'position': 'fixed',
+	      'top': scrollTop * -1
+	    });
+
+	  },
+	  _reScroll: function(scrollTop) {
+	    $('body').css({
+	      'overflow': 'auto',
+	      'position': 'static',
+	      'top': 'auto'
+	    })
+	    $('html, body').scrollTop(scrollTop);
+	  }
+	};
+
+	var flag = true
+	var isFirst = true
 	$(window).scroll(function () {
 		if ($(window).scrollTop() > 0) {
 			$('#top-bar').addClass('active')
+			if (flag) {
+				$('#float-bar-player-fix, #float-bar-player').addClass('active')
+			}
+			setTimeout(function () {
+				flag = true
+			}, 1000)
 		} else {
 			$('#top-bar').removeClass('active')
+			$('#float-bar-player-fix, #float-bar-player').removeClass('active')
 		}
 	})
 
-	var H = parseInt($('.share-box').css('top'))
-	$(document).scroll(function(){
-		$('.share-box').css('top', H);
-	})
+	$('#nav-button').on('click', function(){
+		$('#nav').toggleClass('active');
+	});
 
-	// 导航
 	$('a', '#nav').on('click', function(){
 		if ($(this).index() === 0) {
 			$('html, body').animate({
@@ -89,9 +115,9 @@ $(document).ready(function () {
 				scrollTop: $('#scenes').offset().top - 120
 			}, 300);
 		}
+		$('#nav').removeClass('active')
 	})
 
-	// 场景切换
 	$('a', '#scenes .btn-box').on('click', function(){
 		$('a', '#scenes .btn-box').removeClass('active')
 		$('.msg-box', '#scenes').css('display', 'none')
@@ -102,43 +128,54 @@ $(document).ready(function () {
 	})
 
 	// 播放器放大缩小
-	$('#enlarge-strink').on('click', function(){
+	$('#toggle').on('click', function(){
 		$('#float-bar-player-fix, #float-bar-player').toggleClass('active')
+		if (!$('#float-bar-player-fix, #float-bar-player').hasClass('active')) {
+			flag = false
+		}
 	})
-	$('#close-player').on('click', function(){
-		$('#float-bar-player-fix, #float-bar-player').remove()
+
+	// 关闭广告
+	$('#close-bar-ad').on('click', function(){
+		$(this).parent().remove()
 	})
 
 	// 邮箱地址弹窗
 	$('#share-email').on('click', function(e) {
-		$('#mask, #email-address').css('display', 'block')
+		scrollTop = $(window).scrollTop();
 		$('#mask').height($(document).height())
-		$('#email-address').css('top', $('html, body').scrollTop() + 200)
-		$('body').css('overflow', 'hidden')
+		$('#mask, #email-address').css('display', 'block')
+		BODYBOX._noScroll(scrollTop)
+	})
+
+	// 微信地址弹窗
+	$('#share-wechat').on('click', function(e) {
+		scrollTop = $(window).scrollTop();
+		$('#mask').height($(document).height())
+		$('#mask, #wechat-address').css('display', 'block')
+		BODYBOX._noScroll(scrollTop)
 	})
 
 	// 播放链接弹窗
 	$('#copy-link-btn').on('click', function(){
+		scrollTop = $(window).scrollTop();
 		$('#mask, #player-link').css('display', 'block')
-		$('#player-link').css('top', $('html, body').scrollTop() + 100)
+		$('#player-link').css('top', $(window).scrollTop() + 100)
 		$('#mask').height($(document).height())
-		$('body').css('overflow', 'hidden')
+		BODYBOX._noScroll(scrollTop)
 	})
-
-	if ($.cookie('_tel')) {
-		$('#mobile').val($.cookie('_tel'))
-	}
 
 	// 注册弹窗
 	$('#get-gold-btn').on('click', function(){
+	    scrollTop = $(window).scrollTop();
 		$('#appoint, #appoint-result').css('display', 'none')
 		$('#valid-mobile').css('display', 'block')
 		$('#progress-line-box').removeClass('active')
 
 		$('#mask, #register').css('display', 'block')
-		$('#register').css('top', $('html, body').scrollTop() + 100)
+		$('#register').css('top', $(window).scrollTop() + 100)
 		$('#mask').height($(document).height())
-		$('body').css('overflow', 'hidden')
+		BODYBOX._noScroll(scrollTop)
 	})
 
 	// 下一步
@@ -157,7 +194,7 @@ $(document).ready(function () {
 						$('#appoint').css('display', 'block')
 						$('#progress-line-box').addClass('active')
 					} else if (response.status === 1) {
-						$('#quick-copy2').attr('data-clipboard-text', response.data.link)
+						$('#quick-copy2').attr('data-clipboard-text', '听区块链歌曲，还能领积分，点击：' + response.data.link)
 										 .text(response.data.link)
 						$('#valid-mobile, #appoint').css('display', 'none')
 						$('#appoint-result').css('display', 'block')
@@ -179,25 +216,27 @@ $(document).ready(function () {
 
 	// 预约领取
 	$('#appoint-btn').on('click', function(){
-		if ($('#wallet').val() !== '') {
+		if (!(/^\w+[-+.\w]*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test($('#email').val()))) {
+			salert('请输入正确的邮箱地址');
+			return false;
+		} else {
 			$.ajax({
 				url: '/api/v1/invitation/create',
 				type: 'post',
 				data: {
 					mobile: $('#mobile').val(),
-					address: $('#wallet').val(),
+					address: $('#email').val(),
 					path: window.location.href
 				},
 				success: function(response) {
 					if (response.status === 0) {
-						$('#quick-copy2').attr('data-clipboard-text', response.data.link)
+						$('#quick-copy2').attr('data-clipboard-text', '听区块链歌曲，还能领积分，点击：' + response.data.link)
 										 .text(response.data.link)
 						$('#valid-mobile, #appoint').css('display', 'none')
 						$('#appoint-result').css('display', 'block')
 						$('#progress-line-box').addClass('active')
 						// 未预约过
 						$('.success-tips', '#appoint-result').text('已预约成功').removeClass('active')
-						$.cookie('_tel', $('#mobile').val(), { path: '/' });
 					} else {
 						salert(response.msg)
 					}
@@ -207,8 +246,6 @@ $(document).ready(function () {
 				}
 			})
 			
-		} else {
-			salert('请输入正确的钱包地址')
 		}
 	})
 
@@ -221,8 +258,8 @@ $(document).ready(function () {
 
 	// 关闭弹窗
 	$('.close-btn, #mask').on('click', function(){
-		$('#mask, #player-link, #register, #email-address').css('display', 'none')
-		$('body').css('overflow', 'auto');
+		BODYBOX._reScroll(scrollTop)
+		$('#mask, #player-link, #register, #email-address, #wechat-address').css('display', 'none')
 	})
 
 	// 一键复制
@@ -234,7 +271,11 @@ $(document).ready(function () {
 	    salert("复制失败,请手动复制")  
 	})
 
-	var clipboard2 = new ClipboardJS('.quick-copy2')  
+	var clipboard2 = new ClipboardJS('.quick-copy2', {
+		text: function () {
+			return $('#quick-copy2').attr('data-clipboard-text')
+		}
+	})  
 	clipboard2.on('success', function(e) {  
 	    salert("复制成功！")  
 	})
@@ -275,13 +316,17 @@ $(document).ready(function () {
         if(audio.paused){
             audio.play();
             $(this).addClass('active')
+            if (isFirst) {
+            	isFirst = false
+            	salert('音频加载中，请耐心等待...')
+            }
         } else{
             audio.pause();
             $(this).removeClass('active')
         }
     })
 
-    $('#audio-tag').on("loadedmetadata",function () {
+    $('#audio-tag').on("loadeddata",function () {
         $('#total-time').text(transTime(this.duration));
     });
 
@@ -301,5 +346,28 @@ $(document).ready(function () {
     $('#audio-tag').on('ended', function () {
     	$('#control-btn').removeClass('active');
     });
-
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

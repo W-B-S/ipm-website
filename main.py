@@ -40,9 +40,9 @@ class IndexHandler(tornado.web.RequestHandler):
 
     def get(self):
         page_param = {
-            'title': '老狼新歌区块链全网首发！你听歌，我撒KEY！',
-            'keywords': '老狼新歌区块链全网首发！你听歌，我撒KEY！',
-            'description': 'IPM律链——全球区块链知识产权合约交易所',
+            'title': '区块链首支中文单曲来啦',
+            'keywords': '区块链首支中文单曲来啦',
+            'description': '区块链首支中文单曲来啦',
         }
         if self.is_wap:
             self.page_get = 'first/wap_home.html'

@@ -6,7 +6,7 @@
     <meta name="keywords" content="{{page_param['keywords']}}">
     <meta name="description" content="{{page_param['description']}}">
     <link rel="Shortcut Icon" href="/static/first/images/favicon.ico">
-    <link rel="stylesheet" href="/static/first/css/pc-home.css?v=2.0.0">
+    <link rel="stylesheet" href="/static/first/css/pc-home-2.1.0.css">
     <script src="/static/first/js/jquery-1.9.0.min.js"></script>
     <script src="/static/first/js/jquery-cookie.js"></script>
     <script src="/static/first/js/clipboard.min.js"></script>
@@ -30,7 +30,7 @@
 		<div class="msg-box">
 			<h3>全球区块链知识产权合约交易所</h3>
 			<h3>IP MARKET</h3>
-			<a class="download-btn" href="javascript:;">白皮书下载</a>
+			<a class="download-btn" download href="/static/doc/IPM Whitepaper.pdf">白皮书下载</a>
 		</div>
 	</div>
 </div>
@@ -40,6 +40,7 @@
     <a target="_blank" data-text="facebook" href="javascript:;"></a>
     <a target="_blank" data-text="github" href="https://github.com/W-B-S"></a>
     <a id="share-email" data-text="email" href="javascript:;"></a>
+    <a id="share-wechat" data-text="微信号：lvlian006" href="javascript:;"></a>
 </div>
 <!-- 主题内容 -->
 <div class="wrap content">
@@ -208,11 +209,14 @@
 </div>
 <!-- 播放器 -->
 <audio id="audio-tag" preload="auto">
-	<source src="/static/music/067.mp3">
+	<source src="/static/music/shixu.mp3">
 </audio>
 <div id="float-bar-player-fix" class="float-bar-player-fix"></div>
 <div id="float-bar-player" class="float-bar-player">
-    <div class="wrap clx">
+    <div class="wrap ad-box">
+    	<div class="bar-ad">
+    		<a id="close-bar-ad" href="javascript:;"></a>
+    	</div>
         <div id="trapezoid" class="trapezoid">
             <a id="enlarge-strink" class="enlarge-strink" href="javascript:;"></a>
             <a id="close-player" class="close-player" href="javascript:;"></a>
@@ -224,13 +228,13 @@
         		<a id="control-btn" class="control-btn" href="javascript:;"></a>
         	</div>
             <div class="right-btn clx">
-            	<a id="get-gold-btn" class="fl get-gold-btn" href="javascript:;"></a>
-            	<a id="copy-link-btn" class="fr copy-link-btn" href="javascript:;"></a>
+            	<a id="get-gold-btn" class="fl get-gold-btn" href="javascript:;">领KEY</a>
+            	<a id="copy-link-btn" class="fr copy-link-btn" href="javascript:;">歌曲链接</a>
             </div>
-            <p id="song-small-msg">庆祝老狼新歌区块链全网首发！你听歌，我撒KEY！</p>
+            <p id="song-small-msg">区块链首支中文单曲来啦！</p>
             <div class="song-msg">
-            	<h4>老狼——同桌的你</h4>
-	            <p>全球首支区块链全网首发单曲震撼来袭 <span>2018.03.15 @IP MARKET</span></p>
+            	<h4>青铜器——失</h4>
+	            <p>区块链首支中文单曲来啦！ <span>2018.03.15 @IP MARKET</span></p>
 	            <div id="progress" class="progress">
 	                <div id="current-progress" class="current-progress"></div>
 	            </div>
@@ -251,9 +255,9 @@
 <!-- 播放链接 -->
 <div id="player-link" class="modal-box player-link">
 	<a class="close-btn" href="javascript:;">×</a>
-	<h3>老狼——同桌的你</h3>
+	<h3>青铜器——失</h3>
 	<h4>抢先听区块链地址：</h4>
-	<p id="quick-copy1" class="link" data-clipboard-text="47.91.208.29:8080/ipfs/QmPnPYJ8YoV1bjHMBfxwh3tmqzKLE6dCKGHvRerNG6m2uT">47.91.208.29:8080/ipfs/QmPnPYJ8YoV1bjHMBfxwh3tmqzKLE6dCKGHvRerNG6m2uT</p>
+	<p id="quick-copy1" class="link" data-clipboard-text="http://47.91.208.29:8080/ipfs/Qmd4o2RcvBJjUP7fffqNkwXa1NiBYJgzWN682AnSGyV1EB">http://47.91.208.29:8080/ipfs/Qmd4o2RcvBJjUP7fffqNkwXa1NiBYJgzWN682AnSGyV1EB</p>
 	<a class="btn quick-copy1" data-clipboard-action="copy" data-clipboard-target="#quick-copy1"  href="javascript:;">一键复制歌曲链接</a>
 	<h5>小提示</h5>
 	<p class="tips">*其中47.91.208.29为公网服务器节点，如果需要在本地运行区块链节点并访问歌曲，请下载源代码并安装GO语言编程环境，自行编译安装区块链节点。</p>
@@ -281,7 +285,7 @@
 		<a id="next-btn" class="btn" href="javascript:;">下一步</a>
 		<div id="activity-rules" class="activity-rules">
 			<h5><span></span>活动规则</h5>
-			<p>1、推广期结束后，平台将统一向成功登记信息的钱包地址赠送数量不等的KEY</p>
+			<p>1、推广期结束后，平台将统一向成功登记信息的邮箱地址发送领KEY通知，请留意邮件</p>
 			<p>2、每个手机号码仅限领取一次</p>
 			<p>3、好友通过邀请链接进入活动页面并成功登记信息，您和好友均可获得KEY</p>
 			<p>4、本活动最终解释权归Ip Market所有</p>
@@ -292,13 +296,13 @@
 	<div id="appoint" class="appoint" style="display: none;">
 		<a class="go-back" href="javascript:;">返回上一步</a>
 		<div id="mobile-text" class="mobile-text">手机号码：<span></span></div>
-		<div id="wallet-input" class="input-box wallet-input clx">
-			<div class="fl input-name">钱包地址</div>
+		<div id="email-input" class="input-box wallet-input clx" style="margin-bottom:20px;">
+			<div class="fl input-name">邮箱地址</div>
 			<div class="fl input-text">
-				<input id="wallet" type="text" name="wallet" placeholder="用于领取KEY">
+				<input id="email" type="email" name="email" placeholder="用于接收领KEY通知">
 			</div>
 		</div>
-		<p class="note">*钱包地址一经提交无法修改，请仔细核对</p>
+		<p class="note">*邮箱地址一经提交无法修改，请仔细核对</p>
 		<a id="appoint-btn" class="btn" href="javascript:;">预约领取</a>
 	</div>
 	<!-- 预约结果 -->
@@ -312,6 +316,6 @@
 		<a id="onekey-copy-btn" class="btn quick-copy2" data-clipboard-action="copy" data-clipboard-target="#quick-copy2" href="javascript:;">一键复制链接</a>
 	</div>
 </div>
-<script src="/static/first/js/pc-home.js?v=2.0.0"></script>
+<script src="/static/first/js/pc-home-2.1.0.js"></script>
 </body>
 </html>

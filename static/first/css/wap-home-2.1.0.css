@@ -179,12 +179,12 @@ a {
 .float-bar-player-fix,
 .float-bar-player {
 	width: 100%;
-	height: 3.75rem;
+	height: 3.9rem;
 }
 .float-bar-player-fix.active,
 .float-bar-player.active {
 	width: 100%;
-	height: 1.6rem;
+	height: 2.1rem;
 }
 .float-bar-player {
 	position: fixed;
@@ -327,31 +327,44 @@ a {
 .float-bar-player .small-bar>p {
 	font-size: .26rem;
 	color: #fff;
-	text-indent: 2em;
+	text-indent: .5em;
 	line-height: .8rem;
 }
 .float-bar-player .small-bar .right-btn {
 	position: absolute;
 	top: 0;
-	left: 2.9rem;
-	width: 2.4rem;
+	left: 2.4rem;
+	width: 4rem;
 	height: .8rem;
-	background: url(../images/pc-get-copy-btn.png) center no-repeat;
-	background-size: 2.4rem;
+	border-left: 1px solid #2a44a5;
+	border-right: 1px solid #2a44a5;
 }
 .float-bar-player .small-bar .right-btn>a {
+	width: 2rem;
 	height: .8rem;
+	padding-right: .1rem;
+	font-size: .24rem;
+	color: #30f0ef;
+	line-height: .8rem;
+	text-align: right;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 }
 .float-bar-player .small-bar .right-btn>a.get-gold-btn {
-	width: 1rem;
+	background: url(../images/pc-get-btn.png) .1rem center no-repeat;
+	background-size: .96rem;
+	animation: tada 1s 1s;
 }
 .float-bar-player .small-bar .right-btn>a.copy-link-btn {
-	width: .8rem;
+	border-left: 1px solid #2a44a5;
+	padding-right: .3rem;
+	background: url(../images/pc-copy-btn.png) .1rem center no-repeat;
+	background-size: .5rem;
 }
 .float-bar-player .small-bar .trapezoid {
 	position: absolute;
 	top: 0;
-	right: .5rem;
+	right: .4rem;
 	width: .3rem;
 	height: .8rem;
 	background-image: url(../images/wap-arrow-icon.png);
@@ -361,6 +374,23 @@ a {
 }
 .float-bar-player.active .small-bar .trapezoid {
 	background-position: -.35rem center;
+}
+.float-bar-player .bar-ad {
+	position: relative;
+	width: 100%;
+	height: .5rem;
+	background-image: url(../images/wap-bar-ad.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 7.5rem .5rem;
+}
+.float-bar-player .bar-ad>a {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 1.3rem;
+	height: .5rem;
+	display: block;
 }
 
 /*头部*/
@@ -621,12 +651,12 @@ a {
 
 /*分享图标*/
 .share-box {
-	width: 4rem;
+	width: 5rem;
 	height: 1.2rem;
 	margin-left: auto;
 	margin-right: auto;
 	background: url(../images/wap-share-icons.png) center no-repeat;
-	background-size: 4rem;
+	background-size: 5rem;
 }
 .share-box>a {
 	width: 1rem;
@@ -671,7 +701,7 @@ a {
 	text-align: center;
 }
 .modal-box>h3 {
-	padding-bottom: .5rem;
+	padding-bottom: .15rem;
 	font-size: .44rem;
 	color: #fff;
 	text-align: center;
@@ -745,7 +775,7 @@ a {
 	width: 2.3rem;
 	height: .42rem;
 	margin: 0 auto;
-	padding-bottom: .4rem;
+	padding-bottom: .1rem;
 }
 .modal-box.register .progress-line-box .progress-line {
 	position: absolute;
@@ -866,12 +896,11 @@ a {
 	display: block;
 }
 .modal-box.register .mobile-text {
-	padding: .35rem 0 .35rem .2rem;
+	padding: .15rem 0 .15rem .2rem;
 	font-size: .24rem;
 }
 .modal-box.register .note {
 	padding-top: .15rem;
-	padding-bottom: .15rem;
 }
 .modal-box.register .success-tips {
 	width: 1.9rem;
@@ -906,4 +935,65 @@ a {
 }
 .modal-box.register .invite-link>p>span {
 	color: #399df4;
+}
+@-ms-keyframes tada {
+	0% {
+		-ms-transform: scale(1);
+		transform: scale(1)
+	}
+	10%, 20% {
+		-ms-transform: scale(.8) rotate(-9deg);
+		transform: scale(.8) rotate(-9deg)
+	}
+	30%, 50%, 70%, 90% {
+		-ms-transform: scale(1.2) rotate(9deg);
+		transform: scale(1.2) rotate(9deg)
+	}
+	40%, 60%, 80% {
+		-ms-transform: scale(1.2) rotate(-9deg);
+		transform: scale(1.2) rotate(-9deg)
+	}
+	100% {
+		-ms-transform: scale(1) rotate(0);
+		transform: scale(1) rotate(0)
+	}
+}
+@-webkit-keyframes tada {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+	10%, 20% {
+		-webkit-transform: scale(.8) rotate(-9deg);
+		transform: scale(.8) rotate(-9deg)
+	}
+	30%, 50%, 70%, 90% {
+		-webkit-transform: scale(1.2) rotate(9deg);
+		transform: scale(1.2) rotate(9deg)
+	}
+	40%, 60%, 80% {
+		-webkit-transform: scale(1.2) rotate(-9deg);
+		transform: scale(1.2) rotate(-9deg)
+	}
+	100% {
+		-webkit-transform: scale(1) rotate(0);
+		transform: scale(1) rotate(0)
+	}
+}
+@keyframes tada {
+	0% {
+		-webkit-transform: scale(1)
+	}
+	10%, 20% {
+		-webkit-transform: scale(.8) rotate(-9deg)
+	}
+	30%, 50%, 70%, 90% {
+		-webkit-transform: scale(1.2) rotate(9deg)
+	}
+	40%, 60%, 80% {
+		-webkit-transform: scale(1.2) rotate(-9deg)
+	}
+	100% {
+		-webkit-transform: scale(1) rotate(0)
+	}
 }
